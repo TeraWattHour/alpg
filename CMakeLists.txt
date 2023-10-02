@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.1)
 cmake_policy(SET CMP0079 NEW)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -21,4 +21,3 @@ add_subdirectory(vendor/cjson)
 
 target_link_libraries(alpg PRIVATE ${CURL_LIBRARIES})
 target_link_libraries(alpg PRIVATE cjson)
-
