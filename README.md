@@ -28,6 +28,10 @@ CREATE EXTENSION alpg;
 Should display `search_algolia` as one of the available functions.
 
 ## Usage
+Before running extension's functions you need to set up environment variables `alpg.api_key` and `alpg.app_id`. 
+Remember to set those values for every session you use since SET is only persistent 
+to session or transaction. If even one of those values is undefined, the function will throw an error.
+
 ```postgresql
 search_algolia(
     index_name text, 
