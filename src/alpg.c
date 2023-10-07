@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <postgres.h>
 #include <fmgr.h>
 #include <funcapi.h>
@@ -7,10 +6,10 @@
 #include <utils/syscache.h>
 #include <utils/guc.h>
 #include <utils/jsonb.h>
-#include "utils/builtins.h"
+#include <utils/builtins.h>
 
-#include "curl_helpers.c"
-#include "print_helpers.c"
+#include "curl_helpers.h"
+#include "print_helpers.h"
 
 PG_MODULE_MAGIC;
 

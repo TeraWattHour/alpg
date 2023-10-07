@@ -2,9 +2,7 @@
 // Created by terawatthour on 28.09.23.
 //
 
-#include <postgres.h>
-#include <stdio.h>
-#include <stdarg.h>
+#include "print_helpers.h"
 
 char *vpsprintf(const char *fmt, va_list ap) {
     va_list ap1;
