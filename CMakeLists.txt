@@ -9,6 +9,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
 find_package(PostgreSQL REQUIRED)
 find_package(CURL REQUIRED)
+find_package(cJSON REQUIRED)
 
 include_directories(
     ${CURL_INCLUDE_DIRS}
@@ -17,7 +18,6 @@ include_directories(
 )
 
 add_subdirectory(src)
-add_subdirectory(vendor/cjson)
 
 target_link_libraries(alpg PRIVATE ${CURL_LIBRARIES})
-target_link_libraries(alpg PRIVATE cjson)
+target_link_libraries(alpg PRIVATE ${CJSON_LIBRARIES})
