@@ -1,11 +1,12 @@
 all: install
 
 install:
+	rm -rf build; \
 	mkdir build; \
 	cd build; \
-	cmake ..; \
-	sudo make install;
+  	cp ../src/alpg.control ./; \
+	make -f ../src/Makefile install
 
-dev: install
+create: install
 	cd ~postgres; \
     sudo -u postgres psql -c "DROP EXTENSION IF EXISTS alpg; CREATE EXTENSION alpg;"

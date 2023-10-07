@@ -2,11 +2,10 @@
 **Search Algolia indices from Postgres databases.**
 
 ## Requirements
-- PostgreSQL, best >=14
-- right **pg_config**, extension uses paths provided by this command to install itself, if you have multiple PostgreSQL 
-instances installed, make sure to select the right one.
+- PostgreSQL
+- available **pg_config**, this extension uses PGXS
 - cJSON 
-- CMake >=3.1
+- cURL
 - Make
 
 ## Installation
@@ -14,7 +13,7 @@ instances installed, make sure to select the right one.
 1. Build and install the extension:
 ```
 cd alpg;
-sudo make;
+make;
 ```
 
 2. Create the extension in your selected database. Make sure that your user has the right privileges.
@@ -22,16 +21,16 @@ sudo make;
 CREATE EXTENSION alpg;
 ```
 
-3. Check whether the extension installed correctly.
+3. Check whether the extension has been installed correctly.
 ```postgresql
-\df
+\dx alpg
 ```
-Should display `search_algolia` as one of the available functions.
+Should return `alpg` as one of available extensions.
 
 ## Usage
 Before running extension's functions you need to set up environment variables `alpg.api_key` and `alpg.app_id`. 
 Remember to set those values for every session you use since SET is only persistent 
-to session or transaction. If even one of those values is undefined, the function will throw an error.
+to session or transaction. If even one of those values is undefined, the function will throw.
 
 ```postgresql
 search_algolia(
