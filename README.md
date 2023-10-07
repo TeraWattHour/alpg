@@ -5,7 +5,8 @@
 - PostgreSQL, best >=14
 - right **pg_config**, extension uses paths provided by this command to install itself, if you have multiple PostgreSQL 
 instances installed, make sure to select the right one.
-- CMake, best >=3.1
+- cJSON 
+- CMake >=3.1
 - Make
 
 ## Installation
