@@ -1,5 +1,5 @@
 //
-// Created by Norman Wiese on 08/10/2023.
+// Created by terawatthour on 08/10/2023.
 //
 
 #ifndef ALPG_CURL_HELPERS_H
